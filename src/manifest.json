@@ -1,0 +1,52 @@
+{
+  "manifest_version": 2,
+  "name": "CR-Unblocker",
+  "version": "4.0.3",
+  "description": "A tool that will proxy the Crunchyroll traffic through a US server.",
+  "homepage_url": "https://cr-unblocker.meganeko.dev/",
+  "author": "めがねこ",
+  "icons": {
+    "128": "icons/Crunchyroll-128.png",
+    "48": "icons/Crunchyroll-48.png",
+    "24": "icons/Crunchyroll-24.png"
+  },
+  "permissions": [
+    "activeTab",
+    "cookies",
+    "notifications",
+    "storage",
+    "*://*.crunchyroll.com/*",
+    "webRequest",
+    "webRequestBlocking",
+    "proxy",
+    "tabs"
+  ],
+  "browser_action": {
+    "default_icon": {
+      "128": "icons/Crunchyroll-128.png",
+      "40": "icons/Crunchyroll-40.png",
+      "20": "icons/Crunchyroll-20.png"
+    },
+    "default_title": "CR-Unblocker",
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "scripts": [
+      "settings.js",
+      "background.js"
+    ]
+  },
+  "options_ui": {
+    "page": "dashboard.html"
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "strict_min_version": "91.1.0",
+      "data_collection_permissions": {
+        "required": [
+          "none"
+        ]
+      }
+    }
+  }
+}

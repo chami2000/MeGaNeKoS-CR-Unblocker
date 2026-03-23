@@ -1,0 +1,128 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>CR-Unblocker</title>
+</head>
+<body style="font-family: sans-serif">
+<div style="max-width:700px;margin:auto;">
+    <h1>Crunchyroll Unblocker</h1>
+    <hr>
+    <h2>Download</h2>
+    <p>
+        Firefox users can get the extension
+        <a href="https://addons.mozilla.org/en/firefox/addon/crunchy-unblocker/">here</a>.
+    </p>
+    <h2>Announcements</h2>
+    <h3>Version 4.0.3 Release</h3>
+    <p>
+        This maintenance update fixes the link to our proxy monitor and adds direct access to the detailed HAProxy
+        statistics so you can quickly verify service status.
+    </p>
+    <h3>New Ownership & Version 4.0.0 Release</h3>
+    <p>Hello everyone!</p>
+    <p>
+        As of version 4.0.0, CR-Unblocker is maintained by <a href="https://github.com/MeGaNeKoS">めがねこ</a>. The
+        backend and proxy server have been fully migrated and are now operated at <b>us.community-proxy.meganeko.dev</b>.
+    </p>
+    <h2>Status &amp; Monitoring</h2>
+    <p>
+        You can check live service availability on our official monitor at
+        <a href="https://community-proxy.meganeko.dev/monitor">community-proxy.meganeko.dev/monitor</a>.
+        This page also powers the alerts sent to our uptime robot. For those who need the raw HAProxy statistics, head to
+        <a href="https://community-proxy.meganeko.dev/stats">community-proxy.meganeko.dev/stats</a>.
+    </p>
+    <p>
+        <b>Notice:</b> The previous maintainer, <b><a href="https://github.com/fhuhne/CR-Unblocker">Finn</a></b>, has
+        retired and the old unblocker server is no longer available.
+        I want to extend a huge thank you to Finn for his dedication and years of work on this project, as well as to
+        everyone who supported CR-Unblocker along the way!
+    </p>
+    <p>
+        <b>About version 3.2.0:</b> The 3.2.0 release was accidentally deleted from AMO during transition. Sorry for the
+        inconvenience.
+        If you need a copy of this version for historical reasons, you can manually rebuild it from commit
+        <a href="https://github.com/MeGaNeKoS/CR-Unblocker/tree/73ec3576378bf4ddba617a6e0e0ad9d2d540b6e6"><code>73ec3576378bf4ddba617a6e0e0ad9d2d540b6e6</code></a>
+        on our GitHub repository.
+    </p>
+    <p>
+        <small>
+            <i>To check out this version locally:<br>
+                <code>git clone https://github.com/MeGaNeKoS/CR-Unblocker.git &amp;&amp; cd CR-Unblocker &amp;&amp; git
+                    checkout 73ec3576378bf4ddba617a6e0e0ad9d2d540b6e6</code>
+            </i>
+        </small>
+    </p>
+    <h2>Changelog</h2>
+    <h3>4.0.3 – Firefox context fix and policy update</h3>
+    <ul>
+        <li>Updated the service monitor link to the correct endpoint</li>
+        <li>Linked directly to the HAProxy statistics dashboard for detailed status checks</li>
+    </ul>
+    <h3>4.0.0 – Major update and new proxy server</h3>
+    <ul>
+        <li>Switched default proxy server to <b>us.community-proxy.meganeko.dev</b></li>
+        <li>Now proxies only geo-restricted Crunchyroll traffic, direct for all other traffic</li>
+        <li>No more session ID manipulation—unblocks anime directly</li>
+        <li>Improved support for all regions, including Japan</li>
+    </ul>
+    <h3>3.2.0 – New default proxy and improved access for restricted regions</h3>
+    <p>This release changed the default proxy and improved proxy handling.</p>
+    <ul>
+        <li>Changed default proxy endpoint</li>
+        <li>Reduced load on proxy availability check</li>
+        <li>Proxied initial website load to allow access from restricted regions like Japan</li>
+    </ul>
+    <h3>3.1.0 – HTTP proxy support and status check</h3>
+    <p>Added support for HTTP proxies and UI improvements with proxy availability checks.</p>
+    <h3>3.0.2 – Error handling</h3>
+    <ul>
+        <li>Added notification for incorrect proxy settings</li>
+        <li>Fallback if proxy times out</li>
+    </ul>
+    <h3>3.0.1 – Housekeeping update</h3>
+    <ul>
+        <li>Removed legacy code</li>
+        <li>Hide password for custom proxy config</li>
+        <li>Fixed checkbox setting for custom proxy</li>
+        <li>Use DNS of proxy service</li>
+    </ul>
+    <h3>3.0.0 – Crunchyroll Beta support</h3>
+    <ul>
+        <li>Proxy requests for new token endpoint with SOCKS proxy</li>
+        <li>Custom proxy configuration options</li>
+        <li>Removed legacy login logic</li>
+        <li>Modernized for Crunchyroll Classic</li>
+    </ul>
+    <h3>2.3.1</h3>
+    <p>Most issues seem to be errors getting new sessions. I think this is largely related to the reload loop. To
+        improve on this I implemented a timer to only reload once a minute - if the session can not be obtained, it is
+        unlikely to work a few seconds after.</p>
+    <ul>
+        <li>Added timer between session reloads</li>
+    </ul>
+    <h3>2.3</h3>
+    <p>Good news: unblocking while logged in is back!</p>
+    <p>Some of you have hinted me a way but I could not replicate it for some reason. Thanks for telling me, and sorry
+        for not getting this working sooner :)</p>
+    <ul>
+        <li>Fixed login handling</li>
+        <li>Added disable button to popup to quickly disable the addon</li>
+    </ul>
+    <h3>2.2.3</h3>
+    <p>This is just a small update, sorry still no solution for logged in users :(</p>
+    <p>But I removed the unblock servers that do not work anymore, this should make switching faster.</p>
+    <p>Also, region switching won't happen while logged in. This way you can login/logout depending on the anime you
+        want to watch. Still inconvenient, but better than nothing!</p>
+    <h3>2.2.2b</h3>
+    <p>Hi everyone! Maintainer from the Firefox extension here.</p>
+    <p>Looks like the original creator (who is hosting the unblock server) of this project has no interest in keeping
+        this up. This is why I'm taking over from here on.</p>
+    <p>He said in his "farewell" message to just torrent anime. Please do not do that. Support the anime you love to
+        watch, even more in these challenging times. I'll add some servers to the unblocker pool to "fix" the current
+        problems of session IDs getting issued. Please keep in mind, my resources are limited. If anyone wants to help
+        running unblock servers <a href="https://twitter.com/CrUnblocker">get in touch with me</a>.
+    </p>
+    <p>Greetings from Germany. Stay safe and healthy!</p>
+</div>
+</body>
+</html>
